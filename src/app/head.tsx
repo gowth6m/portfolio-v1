@@ -29,6 +29,8 @@ export default function Head() {
       <link rel="icon" href="logo/logo.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="logo/logo.png" />
       {/* <link rel="manifest" href="/manifest.json" /> */}
+
+      <title>Gowtham</title>
     </head>
   );
 }
