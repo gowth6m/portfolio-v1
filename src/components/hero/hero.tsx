@@ -1,9 +1,11 @@
 import React from "react";
 import TypingText from "./typingText";
+import BackgroundAnimation from "../misc/backgroundAnimation";
 
 export default function Hero() {
   return (
     <div className="w-full flex flex-col justify-center align-middle gap-4">
+      <BackgroundAnimation />
       <h1 className="text-white text-3xl w-full text-center md:text-left">
         Hi, I&apos;m <span className="text-[var(--green-bright)]">Gowtham</span>
         .
