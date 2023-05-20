@@ -39,14 +39,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=MuseoModerno&family=NTR&display=swap');
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   color: var(--white);
   background: var(--navy);
-  font-family: 'NTR', sans-serif;
-}
-
-h1 {
-  font-family: 'NTR', sans-serif !important;
+  /* background: black; */
+  /* font-family: 'NTR', sans-serif; */
+  font-family: 'Comfortaa', cursive;
 }
 
 .pri-btn {
@@ -58,4 +68,23 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   color: var(--green-bright)
+}
+
+.font-museo {
+  font-family: 'MuseoModerno', cursive;
+}
+
+.font-comfortaa {
+  font-family: 'Comfortaa', cursive;
+}
+
+.grad-bg-text {
+  background: linear-gradient(90deg,#a166ed,#5777ff);
+  font-weight: 900;
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
 }
