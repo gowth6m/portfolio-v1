@@ -62,7 +62,7 @@ body {
 .pri-btn {
   border: 1px solid var(--green-bright);
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 18px 26px;
   font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
@@ -87,4 +87,80 @@ body {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+}
+
+.hover1 {
+  color: var(--green-bright);
+  transform: translateY(-2px);
+}
+
+.side-socials {
+  position: fixed;
+  top: 70vh;
+  left: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  gap: 1.6rem;
+}
+
+.side-socials a {
+  color: var(--slate);
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.side-socials a:hover {
+  @apply hover1;
+}
+
+.side-socials::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 2rem);
+  height: 100%;
+  width: 1px;
+  background: var(--slate);
+}
+
+.side-nav {
+  position: fixed;
+  top: 70vh;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+  gap: 1.6rem;
+}
+
+.side-nav a {
+  color: var(--slate);
+  transition: all 0.3s ease-in-out;
+}
+
+.side-nav::after {
+  content: '';
+  position: absolute;
+  top: calc(100% + 2rem);
+  height: 100%;
+  width: 1px;
+  background: var(--slate);
+}
+
+.side-nav a:hover {
+  @apply hover1;
+}
+
+@media (max-width: 768px) {
+  .side-socials {
+    display: none;
+  }
+
+  .side-nav {
+    display: none;
+  }
 }

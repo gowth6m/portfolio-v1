@@ -13,11 +13,10 @@ export default function TypingText({ className }: any) {
   const period = 2000;
 
   const toRotate = [
-    "who likes to try new food",
-    "who likes problem solving",
-    "who is an software engineer at HIVED",
-    "who loves the gym!",
-    "who loves to draw",
+    "I create stuff sometimes.",
+    "I'm probably eating right now",
+    "what do you think about my website?",
+    "scroll down to see more!",
   ];
 
   useEffect(() => {
@@ -59,7 +58,7 @@ export default function TypingText({ className }: any) {
 
   return (
     <div className={className}>
-      a designer & developer <span className="typed-text"> </span>
+      <span className="typed-text"> </span>
       <span>{text}</span>
       <span className="typed-text-cursor">|</span>
     </div>
