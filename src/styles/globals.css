@@ -93,20 +93,33 @@ body {
 }
 
 .title {
-  font-size: 3rem;
   font-weight: 900;
   color: var(--light-slate);
   margin-bottom: 2rem;
+  @apply text-4xl md:text-5xl;
 }
 
 .title::after {
   content: '';
   position: relative;
   display: block;
-  top: -2rem;
-  margin-left: 17rem;
-  width: 30rem;
+  top: -1.5rem;
+  margin-left: 18rem;
+  width: 20rem;
   height: 1px;
   background: var(--light-slate);
   z-index: -1;
+}
+
+.about-tech-stack {
+  list-style: none;
+}
+
+.about-tech-stack li::before {
+  content: "▹";
+  color: var(--green-bright);
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-right: 5px;
 }

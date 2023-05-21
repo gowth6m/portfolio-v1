@@ -25,11 +25,11 @@ export default function NavBar() {
   });
 
   const menuList = [
-    { id: "01", name: "Home", href: "#home" },
-    { id: "02", name: "About Me", href: "#aboutme" },
-    { id: "03", name: "Experience", href: "#experience" },
-    { id: "04", name: "Projects", href: "#projects" },
-    { id: "05", name: "Contact", href: "#contact" },
+    { id: "01", name: "home", href: "#home" },
+    { id: "02", name: "about me", href: "#aboutme" },
+    { id: "03", name: "experience", href: "#experience" },
+    { id: "04", name: "projects", href: "#projects" },
+    { id: "05", name: "contact", href: "#contact" },
   ];
 
   return visible ? (
@@ -43,7 +43,7 @@ export default function NavBar() {
 
         <ul className="md:flex hidden flex-row space-x-6 text-sm align-middle justify-end text-[var(--light-slate)] z-40">
           {menuList.map((item) => (
-            <li key={item.id} className="hover:text-[var(--green-bright)]">
+            <li key={item.id} className="hover:text-[var(--green-bright)] transition-all">
               <a href={item.href}>
                 <span className="text-[var(--green-bright)]">{item.id}. </span>{" "}
                 {item.name}
