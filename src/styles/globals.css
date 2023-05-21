@@ -37,8 +37,6 @@
 }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=MuseoModerno&family=NTR&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -109,6 +107,7 @@ body {
   height: 1px;
   background: var(--light-slate);
   z-index: -1;
+  @apply hidden md:block;
 }
 
 .about-tech-stack {

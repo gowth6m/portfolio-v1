@@ -5,7 +5,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
   return (
-    <div className="container w-full h-[100svh] flex flex-col justify-center align-middle items-center">
+    <div className="container w-full h-[100vh] flex flex-col justify-center align-middle items-center">
       <div className="flex flex-col space-y-6 w-5/6 mx-auto">
         <span className="text-[var(--green-bright)] tracking-wider">
           Hi there

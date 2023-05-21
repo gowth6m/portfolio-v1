@@ -3,7 +3,7 @@ import Me from "../misc/me";
 
 export default function About() {
   return (
-    <div className="container flex flex-col h-[100vh]">
+    <div className="container flex flex-col min-h-[100vh]">
       <div className="w-5/6 mx-auto">
         <div className="flex flex-col overflow-hidden text-sm md:text-base">
           {/* Row 1 */}

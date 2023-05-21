@@ -14,7 +14,7 @@ export default function NavBar() {
     if (prevScrollPos > currentScrollPos || menuOpened) {
       setVisible(true);
     } else {
-      setVisible(false);
+      window.pageYOffset > 100 && setVisible(false);
     }
     setPrevScrollPos(currentScrollPos);
   };
@@ -24,6 +24,20 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
+ useEffect(() => {
+  if (menuOpened) {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100%';
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.height = '100%';
+  } else {
+    document.body.style.overflow = 'unset';
+    document.body.style.height = 'unset';
+    document.documentElement.style.overflow = 'unset';
+    document.documentElement.style.height = 'unset';
+  }
+}, [menuOpened]);
+  
   const menuList = [
     { id: "01", name: "home", href: "#home" },
     { id: "02", name: "about me", href: "#aboutme" },
@@ -36,14 +50,20 @@ export default function NavBar() {
     <div className="fixed w-full origin-top">
       <nav className="mx-auto flex flex-row justify-between align-middle md:mt-8 md:px-10 mt-4 px-4">
         <a href="#home" className="text-sm z-40">
-          <Logo color="var(--green-bright)" className="h-[40px]" />
+          <Logo
+            color="var(--green-bright)"
+            className="h-[40px] w-[40px] justify-start"
+          />
         </a>
 
         <AnimatedButton menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
 
         <ul className="md:flex hidden flex-row space-x-6 text-sm align-middle justify-end text-[var(--light-slate)] z-40">
           {menuList.map((item) => (
-            <li key={item.id} className="hover:text-[var(--green-bright)] transition-all">
+            <li
+              key={item.id}
+              className="hover:text-[var(--green-bright)] transition-all"
+            >
               <a href={item.href}>
                 <span className="text-[var(--green-bright)]">{item.id}. </span>{" "}
                 {item.name}
@@ -106,7 +126,7 @@ const variantNav = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.2,
+      staggerChildren: 0.01,
     },
   },
 };

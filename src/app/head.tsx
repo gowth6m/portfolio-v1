@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import React from "react";
 
 export default function Head() {
@@ -31,6 +32,13 @@ export default function Head() {
       {/* <link rel="manifest" href="/manifest.json" /> */}
 
       <title>Gowtham</title>
+
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=MuseoModerno&family=NTR&display=swap"
+        rel="stylesheet"
+      ></link>
     </head>
   );
 }
