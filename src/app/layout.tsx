@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "../styles/typingText.css";
 import "../styles/side.css";
+import "../styles/nav.css";
 import { Inter } from "next/font/google";
 import Head from "./head";
 import BackgroundAnimation from "@/components/misc/backgroundAnimation";

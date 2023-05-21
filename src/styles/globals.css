@@ -52,10 +52,8 @@ body {
 }
 
 body {
-  color: var(--white);
+  color: var(--slate);
   background: var(--navy);
-  /* background: black; */
-  /* font-family: 'NTR', sans-serif; */
   font-family: 'Comfortaa', cursive;
 }
 
@@ -92,4 +90,23 @@ body {
 .hover1 {
   color: var(--green-bright);
   transform: translateY(-2px);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--light-slate);
+  margin-bottom: 2rem;
+}
+
+.title::after {
+  content: '';
+  position: relative;
+  display: block;
+  top: -2rem;
+  margin-left: 17rem;
+  width: 30rem;
+  height: 1px;
+  background: var(--light-slate);
+  z-index: -1;
 }

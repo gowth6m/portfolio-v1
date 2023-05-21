@@ -1,41 +1,112 @@
-import React from "react";
+"use client";
+
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import Logo from "../misc/logo";
 
 export default function NavBar() {
-  return (
-    <nav className="fixed w-full">
-      <div className="mx-auto flex flex-row justify-between align-middle mt-8 px-10">
-        <a href="#home" className="text-sm">
-          <Logo color="var(--green-bright)" className="h-[40px]"/>
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos || menuOpened) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const menuList = [
+    { id: "01", name: "Home", href: "#home" },
+    { id: "02", name: "About Me", href: "#aboutme" },
+    { id: "03", name: "Experience", href: "#experience" },
+    { id: "04", name: "Projects", href: "#projects" },
+    { id: "05", name: "Contact", href: "#contact" },
+  ];
+
+  return visible ? (
+    <div className="fixed w-full origin-top">
+      <nav className="mx-auto flex flex-row justify-between align-middle md:mt-8 md:px-10 mt-4 px-4">
+        <a href="#home" className="text-sm z-40">
+          <Logo color="var(--green-bright)" className="h-[40px]" />
         </a>
-        <ul className="flex flex-row space-x-6 text-sm align-middle justify-end">
-          <li>
-            <a href="#home">
-              <span className="text-[var(--green-bright)]">01. </span>Home
-            </a>
-          </li>
-          <li>
-            <a href="#about">
-              <span className="text-[var(--green-bright)]">02. </span>About Me
-            </a>
-          </li>
-          <li>
-            <a href="#projects">
-              <span className="text-[var(--green-bright)]">03. </span>Experience
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <span className="text-[var(--green-bright)]">04. </span>Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <span className="text-[var(--green-bright)]">05. </span>Contact
-            </a>
-          </li>
+
+        <AnimatedButton menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
+
+        <ul className="md:flex hidden flex-row space-x-6 text-sm align-middle justify-end text-[var(--light-slate)] z-40">
+          {menuList.map((item) => (
+            <li key={item.id} className="hover:text-[var(--green-bright)]">
+              <a href={item.href}>
+                <span className="text-[var(--green-bright)]">{item.id}. </span>{" "}
+                {item.name}
+              </a>
+            </li>
+          ))}
         </ul>
-      </div>
-    </nav>
+      </nav>
+      {menuOpened && (
+        <motion.div
+          className="md:hidden flex flex-col space-y-4 align-middle justify-end text-[var(--light-slate)] h-[100vh] w-[100vw] fixed top-0 left-0 bg-[var(--dark-navy)] px-4 py-8"
+          variants={variantNav}
+          initial="hidden"
+          animate={menuOpened ? "visible" : "hidden"}
+        >
+          {menuList.map((item) => (
+            <motion.a
+              key={item.id}
+              href={item.href}
+              className="hover:text-[var(--green-bright)] text-5xl text-right"
+              variants={variantNav}
+              onClick={() => setMenuOpened(false)}
+            >
+              <span className="text-[var(--green-bright)]">{item.id}. </span>{" "}
+              {item.name}
+            </motion.a>
+          ))}
+
+          <div className="py-8"></div>
+        </motion.div>
+      )}
+    </div>
+  ) : (
+    <></>
   );
 }
+
+const AnimatedButton = ({ menuOpened, setMenuOpened }: any) => {
+  return (
+    <button
+      className={`hamburger hamburger--collapse ${menuOpened && "is-active"}`}
+      type="button"
+      onClick={() => setMenuOpened(!menuOpened)}
+    >
+      <span className="hamburger-box">
+        <span className="hamburger-inner"></span>
+      </span>
+    </button>
+  );
+};
+
+const variantNav = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+};

@@ -1,16 +1,8 @@
 import {
-  faCodepen,
-  faGithub,
-  faInstagram,
-  faLinkedinIn,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import {
   faBriefcase,
   faDiagramProject,
   faEnvelope,
   faHouse,
-  faPerson,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
