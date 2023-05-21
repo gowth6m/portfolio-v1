@@ -1,16 +1,13 @@
 import React from "react";
 import TypingText from "./typingText";
-import BackgroundAnimation from "../misc/backgroundAnimation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
   return (
-    <div className="container w-full flex flex-col justify-center align-middle">
-      <BackgroundAnimation color={"white"} />
-
-      <div className="my-20 flex flex-col space-y-6">
-        <h1 className="text-[var(--white)] text-6xl w-full text-center md:text-left font-museo">
+    <div className="container w-full h-[100svh] flex flex-col justify-center align-middle items-center">
+      <div className="flex flex-col space-y-6 w-5/6 mx-auto">
+        <h1 className="text-[var(--white)] text-6xl w-full text-center md:text-left">
           Hi, I&apos;m{" "}
           <span className="text-[var(--green-bright)]">Gowtham</span>.
         </h1>
@@ -21,8 +18,8 @@ export default function Hero() {
           <p className="text-[var(--slate)] text-base text-center md:text-left">
             I&apos;m a software engineer and artist based in London, UK. I have
             an interest in full stack development, machine learning,
-            human-computer interactions and explore the vast realm of everything
-            in between.
+            human-computer interactions and the vast realm of everything in
+            between.
           </p>
         </div>
 
