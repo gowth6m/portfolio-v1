@@ -47,6 +47,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -92,22 +93,26 @@ body {
 
 .title {
   font-weight: 900;
-  color: var(--light-slate);
+  color: var(--lightest-slate);
   margin-bottom: 2rem;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  white-space: nowrap;
   @apply text-4xl md:text-5xl;
 }
 
 .title::after {
   content: '';
+  box-sizing: inherit;
   position: relative;
   display: block;
-  top: -1.5rem;
-  margin-left: 18rem;
+  top: 1.5rem;
+  margin-left: 10px;
   width: 20rem;
   height: 1px;
   background: var(--light-slate);
   z-index: -1;
-  @apply hidden md:block;
 }
 
 .about-tech-stack {

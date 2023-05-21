@@ -37,7 +37,7 @@ export default function NavBar() {
     document.documentElement.style.height = 'unset';
   }
 }, [menuOpened]);
-  
+
   const menuList = [
     { id: "01", name: "home", href: "#home" },
     { id: "02", name: "about me", href: "#aboutme" },

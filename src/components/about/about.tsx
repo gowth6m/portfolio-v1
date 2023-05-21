@@ -3,8 +3,8 @@ import Me from "../misc/me";
 
 export default function About() {
   return (
-    <div className="container flex flex-col min-h-[100vh]">
-      <div className="w-5/6 mx-auto">
+    <div id="aboutme" className="container flex flex-col min-h-fit">
+      <div className="w-5/6 mx-auto my-12 md:my-32">
         <div className="flex flex-col overflow-hidden text-sm md:text-base">
           {/* Row 1 */}
           <div className="flex flex-col md:flex-row gap-4">
@@ -18,7 +18,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-4 flex-1 overflow-hidden">
             <AboutText className="flex-1 overflow-hidden" />
             <div className="flex-1">
-              <Me className="object-contain w-4/6 h-auto mx-auto rounded-full border-[var(--green-bright)] border-solid border my-6 md:my-auto" />
+              <Me className="object-contain w-4/6 md:w-[55%] h-auto mx-auto rounded-full border-[var(--green-bright)] border-solid border my-6 md:my-auto" />
             </div>
           </div>
         </div>
