@@ -126,7 +126,7 @@ const variantNav = {
     opacity: 1,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.01,
+      staggerChildren: 0.1,
     },
   },
 };

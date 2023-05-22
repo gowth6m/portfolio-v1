@@ -1,4 +1,5 @@
 import React from "react";
+import VerticalTabs from "./verticalTabs";
 
 export default function Experience() {
   return (
@@ -15,20 +16,16 @@ export default function Experience() {
 
           {/* Row 2 - experience */}
           <div>
-            {/* Tabs */}
-            <div className="flex flex-col flex-1 bg-slate-400 w-1/6">
-                <button>tab 1 <span className="bg-red"></span></button>
-                <button>tab 2</button>
-            </div>
-
-            {/* Display section */}
-
-            <div className="bg-slate-900 flex-auto">
-
-            </div>
+            <VerticalTabs />
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
 }
