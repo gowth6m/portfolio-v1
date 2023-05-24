@@ -27,7 +27,7 @@ export default function Hero() {
         </div>
 
         <div className="flex justify-center align-middle md:justify-start">
-          <button className="pri-btn flex flex-row justify-center align-middle gap-2 w-full md:w-auto mt-6">
+          <button className="pri-btn flex flex-row justify-center align-middle gap-2 w-full md:w-auto mt-6 lg:mt-10 btn-hover">
             <FontAwesomeIcon icon={faEnvelope} className="h-[25px]" />
             <div className="text-base">Say hi!</div>
           </button>

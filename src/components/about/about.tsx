@@ -4,8 +4,8 @@ import Me from "../misc/me";
 export default function About() {
   return (
     <div id="aboutme" className="container flex flex-col min-h-fit">
-      <div className="w-5/6 mx-auto my-12 md:my-32">
-        <div className="flex flex-col overflow-hidden text-sm md:text-base">
+      <div className="w-5/6 mx-auto my-12 md:my-28">
+        <div className="flex flex-col overflow-hidden text-sm md:text-base gap-y-4">
           {/* Row 1 */}
           <div className="flex flex-col md:flex-row gap-4">
             <h1 className="title text-left flex-1 overflow-hidden">
@@ -18,7 +18,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-4 flex-1 overflow-hidden">
             <AboutText className="flex-1 overflow-hidden" />
             <div className="flex-1">
-              <Me className="object-contain w-4/6 md:w-[55%] h-auto mx-auto rounded-full border-[var(--green-bright)] border-solid border my-6 md:my-auto" />
+              <Me className="object-contain w-4/6 md:w-[55%] h-auto mx-auto md:ml-auto md:mr-[10%] rounded-lg border-[var(--green-bright)] border-solid border my-6 md:my-auto justify-end" />
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ const AboutText = ({ className }: { className?: string }) => {
       >
         HIVED
       </a>
-      , taking lead on the front-end development. I am also a freelance
+      , taking lead on front-end development. I am also a freelance
       developer and designer.
       <br />
       <br />

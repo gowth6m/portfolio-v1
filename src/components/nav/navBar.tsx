@@ -62,10 +62,10 @@ export default function NavBar() {
           {menuList.map((item) => (
             <li
               key={item.id}
-              className="hover:text-[var(--green-bright)] transition-all"
+              className="hover:text-[var(--green-bright)] duration-300 hover:translate-y-[-2px]"
             >
               <a href={item.href}>
-                <span className="text-[var(--green-bright)]">{item.id}. </span>{" "}
+                <span className="py-4 text-[var(--green-bright)]">{item.id}. </span>{" "}
                 {item.name}
               </a>
             </li>
