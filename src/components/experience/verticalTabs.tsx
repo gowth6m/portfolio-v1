@@ -77,7 +77,11 @@ function TabContent({
       >
         <h2 className="text-[var(--lightest-slate)] text-lg font-bold">
           {role}{" "}
-          <a className="text-[var(--green-bright)] hover2" href={link} target="_blank">
+          <a
+            className="text-[var(--green-bright)] hover2"
+            href={link}
+            target="_blank"
+          >
             @ {company}
           </a>
         </h2>
@@ -117,8 +121,8 @@ type TabContent = {
 };
 
 const variants = {
-  hidden: { opacity: 0, x: 100 },
-  show: { opacity: 1, x: 0 },
+  hidden: { opacity: 0, y: 100 },
+  show: { opacity: 1, y: 0 },
 };
 
 const experience: TabContent[] = [

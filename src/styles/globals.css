@@ -108,12 +108,11 @@ body {
 .title {
   font-weight: 900;
   color: var(--lightest-slate);
-  margin-bottom: 2rem;
   display: flex;
   position: relative;
   flex-direction: row;
   white-space: nowrap;
-  @apply text-4xl md:text-5xl;
+  @apply text-4xl md:text-5xl md:mb-8 mb-4;
 }
 
 .btn-hover:hover,
@@ -130,7 +129,7 @@ body {
   display: block;
   top: 1.5rem;
   margin-left: 10px;
-  width: 100%;
+  width: 6em;
   height: 1px;
   background: var(--slate);
   z-index: -1;

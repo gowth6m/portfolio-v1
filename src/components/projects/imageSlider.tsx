@@ -28,7 +28,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   return (
     <div className="flex flex-col items-center w-full max-w-lg mx-auto">
-      <div className="relative w-full">
+      <div className="relative w-full h-64">
         <button
           className="absolute top-1/2 transform -translate-y-1/2 text-3xl text-white bg-transparent border-none focus:outline-none"
           style={{ left: "10px" }}
@@ -41,7 +41,7 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
             key={currentImageIndex}
             src={images[currentImageIndex]}
             alt=""
-            className="w-full h-auto"
+            className="w-full h-full rounded-xl object-cover"
             initial={{ x: 100 }}
             animate={{ x: 0 }}
             exit={{ x: -100 }}

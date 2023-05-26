@@ -11,7 +11,6 @@ export default function Experience() {
             <h1 className="title text-left flex-1 overflow-hidden">
               <span className="text-[var(--green-bright)]">/ </span>experience
             </h1>
-            <div className="flex-1"></div>
           </div>
 
           {/* Row 2 - experience */}

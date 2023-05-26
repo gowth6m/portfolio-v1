@@ -11,7 +11,6 @@ export default function About() {
             <h1 className="title text-left flex-1 overflow-hidden">
               <span className="text-[var(--green-bright)]">/ </span>about me
             </h1>
-            <div className="flex-1"></div>
           </div>
 
           {/* Row 2 */}
